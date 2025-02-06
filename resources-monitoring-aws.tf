@@ -7,7 +7,7 @@ resource "aws_sns_topic" "budget_alerts" {
 resource "aws_sns_topic_subscription" "email_subscription" {
   topic_arn = aws_sns_topic.budget_alerts.arn
   protocol  = "email"
-  endpoint  = "ingmarsegu@gmail.com" # Replace with your email
+  endpoint  = "ingmarsegu@gmail.com" 
 }
 
 # IAM Role for AWS Budgets to publish to SNS
@@ -61,7 +61,7 @@ resource "aws_budgets_budget" "monthly_budget" {
     threshold                  = 40 # 40% of budget ($2)
     threshold_type             = "PERCENTAGE"
     notification_type          = "ACTUAL"
-    subscriber_email_addresses = ["ingmarsegu@gmail.com"] # Replace with your email
+    subscriber_email_addresses = ["ingmarsegu@gmail.com"] 
   }
 
   # Second Alert at $5 (100% of budget)
