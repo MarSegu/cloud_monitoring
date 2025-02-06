@@ -2,14 +2,6 @@
 
 This repository contains two cloud monitoring solutions designed to help you set up and manage budgets and alerts for **AWS** and **Azure** platforms. The solutions are useful for tracking costs and ensuring that you stay within your set budget limits.
 
-## Table of Contents
-- [Overview](#overview)
-- [Azure Monitoring Solution](#azure-monitoring-solution)
-- [AWS Monitoring Solution](#aws-monitoring-solution)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Overview
 
 The solutions in this repository allow you to:
