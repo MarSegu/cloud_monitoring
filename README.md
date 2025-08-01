@@ -10,7 +10,7 @@
 
 ## ✨ Overview
 
-**cloud_monitoring** es un módulo de Terraform que facilita la configuración de monitoreo en la nube, permitiendo supervisar recursos, alertas y métricas de manera automatizada y reproducible. Ideal para equipos DevOps, arquitecturas cloud y proyectos que buscan observabilidad y alta disponibilidad.
+**cloud_monitoring** is a Terraform module that simplifies cloud monitoring configuration, allowing you to supervise resources, alerts, and metrics in an automated and reproducible way. It's ideal for DevOps teams, cloud architectures, and projects seeking observability and high availability.
 
 ---
 
@@ -18,12 +18,12 @@
 
 <div align="center">
 
-| Lenguaje / Herramienta                                       | Uso                                         |
-|--------------------------------------------------------------|---------------------------------------------|
-| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" width="24"/> HCL (Terraform) | Infraestructura como código (IaC)           |
-| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aws/aws-original.svg" width="24"/> AWS / <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" width="24"/> GCP / <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" width="24"/> Azure | Proveedores de nube soportados              |
-| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="24"/> GitHub Actions        | Automatización CI/CD                        |
-| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg" width="24"/> Prometheus / <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" width="24"/> Grafana | Opcional: integración con sistemas de monitoreo |
+| Language / Tool                                         | Usage                                     |
+|---------------------------------------------------------|-------------------------------------------|
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" width="24"/> HCL (Terraform) | Infrastructure as Code (IaC)              |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aws/aws-original.svg" width="24"/> AWS / <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" width="24"/> GCP / <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" width="24"/> Azure | Supported cloud providers                 |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="24"/> GitHub Actions        | CI/CD automation                          |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg" width="24"/> Prometheus / <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" width="24"/> Grafana | Optional: integration with monitoring systems |
 
 </div>
 
@@ -33,61 +33,61 @@
 
 ```text
 .
-├── main.tf              # Definición principal del módulo
-├── variables.tf         # Variables configurables del módulo
-├── outputs.tf           # Outputs generados
-├── examples/            # Ejemplos de uso
-├── scripts/             # Scripts de automatización
-├── .github/workflows/   # Pipelines CI/CD (GitHub Actions)
-└── README.md            # Documentación del proyecto
+├── main.tf              # Main module definition
+├── variables.tf         # Configurable module variables
+├── outputs.tf           # Generated outputs
+├── examples/            # Usage examples
+├── scripts/             # Automation scripts
+├── .github/workflows/   # CI/CD pipelines (GitHub Actions)
+└── README.md            # Project documentation
 ```
 
 ---
 
 ## ⚡ Features
 
-- **Monitoreo automatizado** de recursos cloud
-- **Alertas y métricas personalizables**
-- **Integración sencilla** con sistemas de monitoreo existentes
-- **Infraestructura como código** para reproducibilidad y escalabilidad
-- **Fácil extensión** para múltiples proveedores cloud
+- **Automated monitoring** of cloud resources
+- **Customizable alerts and metrics**
+- **Easy integration** with existing monitoring systems
+- **Infrastructure as Code** for reproducibility and scalability
+- **Easily extensible** for multiple cloud providers
 
 ---
 
 ## 🛠️ Getting Started
 
-> **Despliega monitoreo en minutos.**
+> **Deploy monitoring in minutes.**
 
 ```bash
-# Clona el repositorio
+# Clone the repository
 git clone https://github.com/MarSegu/cloud_monitoring.git
 cd cloud_monitoring
 
-# Inicializa Terraform
+# Initialize Terraform
 terraform init
 
-# Aplica la infraestructura de monitoreo
+# Apply monitoring infrastructure
 terraform apply
 ```
 
 ---
 
-## ⚙️ Variables Principales
+## ⚙️ Main Variables
 
-| Variable         | Descripción                            | Tipo   | Requerido | Ejemplo              |
-|------------------|----------------------------------------|--------|-----------|----------------------|
-| `resources`      | Lista de recursos a monitorear         | list   | Sí        | `["ec2", "s3"]`      |
-| `alert_rules`    | Reglas de alerta personalizadas        | map    | No        | `{ cpu = "80%" }`    |
-| `provider`       | Proveedor Cloud (`aws`, `gcp`, `azur`) | string | Sí        | `"aws"`              |
-| `notify_email`   | Email para notificaciones              | string | No        | `"devops@ejemplo.com"` |
+| Variable         | Description                          | Type   | Required | Example              |
+|------------------|--------------------------------------|--------|----------|----------------------|
+| `resources`      | List of resources to monitor         | list   | Yes      | `["ec2", "s3"]`      |
+| `alert_rules`    | Custom alert rules                   | map    | No       | `{ cpu = "80%" }`    |
+| `provider`       | Cloud provider (`aws`, `gcp`, `azur`)| string | Yes      | `"aws"`              |
+| `notify_email`   | Email for notifications              | string | No       | `"devops@example.com"`|
 
-> Revisa [`variables.tf`](./variables.tf) para todas las opciones.
+> Check [`variables.tf`](./variables.tf) for all options.
 
 ---
 
 ## 🧪 Testing
 
-> Verifica la infraestructura y las reglas de monitoreo.
+> Verify infrastructure and monitoring rules.
 
 ```bash
 terraform plan
@@ -98,29 +98,29 @@ terraform apply
 
 ## 🚀 Deployment
 
-- **CI/CD:** Automatizado vía workflows en `.github/workflows/`.
+- **CI/CD:** Automated via workflows in `.github/workflows/`.
 
 ---
 
 ## 📤 Outputs
 
-| Output      | Descripción                    |
-|-------------|-------------------------------|
-| `dashboard_url`  | URL del dashboard de monitoreo      |
-| `alerts_status`  | Estado de las alertas configuradas  |
+| Output          | Description                      |
+|-----------------|----------------------------------|
+| `dashboard_url` | Monitoring dashboard URL         |
+| `alerts_status` | Status of configured alerts      |
 
 ---
 
 ## 🤝 Contributing
 
-¡Las contribuciones son bienvenidas!  
-Abre un issue o pull request para sugerencias y mejoras.
+Contributions are welcome!  
+Open an issue or pull request for suggestions and improvements.
 
 ---
 
 ## 📃 License
 
-Distribuido bajo la licencia MIT. Consulta [LICENSE](LICENSE) para más detalles.
+Distributed under the MIT License. See [LICENSE](LICENSE) for more details.
 
 ---
 
